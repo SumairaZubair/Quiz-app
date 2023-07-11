@@ -41,7 +41,7 @@ const QuizComp = () => {
     const [currQ, setCurrQ] = useState(0) // for questions
     const [score, setScore] = useState(0)    // for score
     const [showScore, setShowScore] = useState(false)
-    const HandleResponse=(isCorrect)=>{
+    const handleResponse=(isCorrect)=>{
          if(isCorrect){
             setScore(score+1)
          }
@@ -60,7 +60,7 @@ const QuizComp = () => {
     }
     return (
         <div className='main'>
-            {showScore ? (<div className='result'>you have{score}out of {Questions.length}
+            {showScore ? (<div className='result'>you have {''} { score } {''} out of  { Questions.length}
             <>
               <button className='play' type='submit' onClick={resetQuiz}>Play Again</button>
             </>
@@ -75,7 +75,7 @@ const QuizComp = () => {
                     </div>
                     <div>
                         {Questions[currQ].answerOptions.map((ans) => (
-                            <button  className='answer' onClick={() => HandleResponse(ans.isCorrect)}>{ans.answerText}</button>
+                            <button  className='answer' onClick={() => handleResponse(ans.isCorrect)}>{ans.answerText}</button>
                         ))}
                     </div>
                 </div>
